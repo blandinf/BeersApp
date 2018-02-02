@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BeersApp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="result in results">Name : {{ result.name }}</li>
+    </ul>
+</div>
+
+<script>
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            results: []
+        },
+        mounted() {
+            axios.get('https://api.brewerydb.com/v2/beers?styleId=1&key=85b0bfdcd6c896a617bed792d43253db&format=json')
+                .then(response => {
+                    this.results = response.data.data;
+                    console.log(response.data.data);
+                })
+
+        }
+    });
+
+
+//    axios.get('https://api.brewerydb.com/v2/beers?styleId=1&key=85b0bfdcd6c896a617bed792d43253db&format=json')
+//        .then(function(response){
+//            datas = response.data.data;
+////            datas.forEach(function(element) {
+////                data_name = element.name;
+////                console.log(data_name);
+////            });
+//        });
+
+</script>
