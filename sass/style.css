@@ -1,0 +1,19 @@
+.elevation-1, .pagination {
+  position: absolute;
+  left: 50%; }
+
+.elevation-1 {
+  top: 60%;
+  transform: translate(-50%, -60%); }
+
+.table__overflow {
+  width: 90% !important; }
+
+.pagination {
+  top: 90%;
+  transform: translate(-50%, -90%); }
+
+#empty {
+  color: indianred; }
+
+/*# sourceMappingURL=style.css.map */
